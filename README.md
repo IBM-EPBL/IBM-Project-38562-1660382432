@@ -9,3 +9,7 @@ In order to predict the resale value of the car, we proposed an intelligent, fle
 # Technical Architecture
 
 ![image](https://user-images.githubusercontent.com/104731166/190687774-456ec09c-6df7-4bc8-8a00-b6b65ae7d127.png)
+
+# Problem Statement
+
+Car buyers need a way to buy a car so that they approach a tool that determines the reasonable price.
