@@ -1,0 +1,14 @@
+
+Add Authentication
+By Next, run the following command:
+
+./auth/Scripts/activate
+
+set FLASK_APP=project
+set FLASK_DEBUG=1
+
+Run Project in local host
+flask run
+
+Visit,
+localhost:5000/ 
