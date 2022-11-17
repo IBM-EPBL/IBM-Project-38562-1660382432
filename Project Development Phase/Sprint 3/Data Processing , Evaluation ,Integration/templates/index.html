@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+      <section id="desktop-banner-valuation-section" style="top:288px;right:40px;width:433px;border:1px solid #d8dfe0;height:468px;position:absolute;border-radius:8px;background-color:#f2f4f5" class="">
+        <div>
+            <div class="_3wBVg">
+                <header style="display:flex;padding:12px 0;font-size:22px;text-align:center;align-items:center;background:white;font-weight:bold;line-height:1.82;border-bottom:1px solid #d8dfe0;border-radius:8px 8px 0 0;justify-content:center" class="_2e-QZ"> 
+                    <p class="block mb-2 text-l font-medium text-black-900 dark:text-black-400">Fill in your car details</p>
+                </header>
+                <div class="">
+                    <div class="" style="justify-content:center">
+                       <form action="/y_predict" method="post">
+                        <select id="countries"name="brand" class="bg-gray-50 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <option selected>Select your car brand</option>
+                          {% for r in brand%}
+							<option value="{{r}}">{{r}} </option>
+						  {% endfor %}
+                        </select>
+                        <select id="countries" name="regyear" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <option selected>Select your car year of Registration</option>
+                          {% for r in year%}
+						  <option value="{{r}}">{{r}} </option>
+						  {% endfor %}
+                        </select>
+                        <select id="countries" name="modeltype" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <option selected>Select your car model</option>
+                          {% for r in model%}
+						  <option value="{{r}}">{{r}} </option>
+                          {% endfor %}
+                        </select>
+                        <select id="countries" name="fuel" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <option selected>Select your car FuelType</option>
+                          {% for r in fuelTp%}
+						  <option value="{{r}}">{{r}} </option>
+						  {% endfor %}
+                        </select>
+                        <select id="countries" name="regmonth" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <option selected>Select your car month of Registration</option>
+                          {% for r in month%}
+				    	  <option value="{{r}}">{{r}} </option>
+						  {% endfor %} 
+                        </select>
+                        <select id="countries" name="gearbox" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <option selected>Select your car gearbox</option>
+                          {% for r in gearbox%}
+						   <option value="{{r}}">{{r}} </option>
+						{% endfor %}
+                        </select>
+                        <input type="number" name="powerps" placeholder="Enter power in PS" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="kms" required>
+						<input type="number" name="kms" placeholder="Enter number of Kilometers Driven" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="powerps" required>
+                        <select id="countries" name="dam" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <option selected>Select your car Repaired or Damaged</option>
+                          {% for r in RorD%}
+						   <option value="{{r}}">{{r}} </option>
+						{% endfor %}
+                        </select>
+						<select id="countries" name="vehicletype" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                          <option selected>Select your car VehicleType</option>
+                          {% for r in vehicletp%}
+						   <option value="{{r}}">{{r}} </option>
+						{% endfor %}
+                        </select>
+						<span class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">	{{ypred}}  </span>
+					  <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">submit</button>
+                      
+					  </form>
+                    </div>
+					
+                </div>
+           </div>
+           </div>
+         </section>
+      </div>
+<div class="bg-gray-50">
+        <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <span class="block">Looking to sell your car?</span>
+            <span class="block text-orange-600">Enter your car registration no.</span>
+          </h2>
+
+			<input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 uppercase" placeholder="TN72AU1234" required>
+
+          <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div class="inline-flex rounded-md shadow">
+              <button class="inline-flex items-center justify-center rounded-md border border-transparent bg-orange-600 px-5 py-3 text-base font-medium text-white hover:bg-orange-700">Get Car Price</button >
+             </div>
+            <div class="ml-3 inline-flex rounded-md shadow">
+			<form action="{{ url_for('auth.signup') }}">
+					<button class="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-orange-600 hover:bg-orange-50">Get Started</button>
+			</form>
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}
