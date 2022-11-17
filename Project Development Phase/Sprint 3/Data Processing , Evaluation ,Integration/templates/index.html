@@ -1,17 +1,63 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div>
-      <section id="desktop-banner-valuation-section" style="top:288px;right:40px;width:433px;border:1px solid #d8dfe0;height:468px;position:absolute;border-radius:8px;background-color:#f2f4f5" class="">
-        <div>
-            <div class="_3wBVg">
+
+<!--	<div class="bg-gray-50">
+        <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            <span class="block">Looking to sell your car?</span>
+            <span class="block text-orange-600">Enter your car registration no.</span>
+          </h2>
+
+			<input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 uppercase" placeholder="TN72AU1234" required>
+
+          <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div class="inline-flex rounded-md shadow">
+              <button class="inline-flex items-center justify-center rounded-md border border-transparent bg-orange-600 px-5 py-3 text-base font-medium text-white hover:bg-orange-700">Get Car Price</button >
+             </div>
+            <div class="ml-3 inline-flex rounded-md shadow">
+			<form action="{{ url_for('auth.signup') }}">
+					<button class="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-orange-600 hover:bg-orange-50">Get Started</button>
+			</form>
+            </div>
+          </div>
+        </div>
+      </div> -->	
+<div class="flex">
+  <div class="w-1/2 ml-auto h-12">
+	<div class="flex justify-center my-2 mx-4 md:mx-0">
+	<div class="w-full max-w-xl bg-white rounded-lg shadow-md p-6">
+      <form class="flex flex-wrap mx-3 mb-6">		
+         <div class="w-full md:w-full px-3 mb-6">
+			<h2 class="items-center justify-center text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+				<span class="flex justify-center">Looking to sell your car?</span>
+				<span class="w-full flex items-center justify-between px-3 mb-3 text-orange-600">Enter your car registration no.</span>
+			</h2>
+			<div class="">
+				<input class="appearance-none block w-full bg-white text-gray-900 font-medium border border-gray-400 rounded-lg py-3 px-3 leading-tight focus:outline-none uppercase" type='text' name="number plate" pattern="^[A-Z]{2}[0-9]{1,2}(?:[A-Z])?(?:[A-Z]*)?[0-9]{4}$" title= "Number Plate"  placeholder="TN72AU1234" required>
+				<div class="w-full">
+					<button class="appearance-none block w-full bg-blue-600 text-gray-100 font-bold border border-gray-200 rounded-lg py-3 px-3 leading-tight hover:bg-blue-500 focus:outline-none focus:bg-white focus:border-gray-500">Get Car Price</button>
+				</div>
+			</div>
+		 </div>
+        </form>
+			<div class="w-full">
+			<a href="{{ url_for('auth.signup') }}">
+				<button class="appearance-none block w-full bg-blue-600 text-gray-100 font-bold border border-gray-200 rounded-lg py-3 px-3 leading-tight hover:bg-blue-500 focus:outline-none focus:bg-white focus:border-gray-500">Book an appointment</button>
+			</a>
+		</div>
+	</div>
+</div>
+</div>
+            <div class="w-1/2 mr-auto h-12">
                 <header style="display:flex;padding:12px 0;font-size:22px;text-align:center;align-items:center;background:white;font-weight:bold;line-height:1.82;border-bottom:1px solid #d8dfe0;border-radius:8px 8px 0 0;justify-content:center" class="_2e-QZ"> 
-                    <p class="block mb-2 text-l font-medium text-black-900 dark:text-black-400">Fill in your car details</p>
+                    <span class="block mb-2 text-l font-medium text-black-900 dark:text-black-400" data-aut-id="evaluate_car_header_label">Fill in your car details</span>
                 </header>
-                <div class="">
-                    <div class="" style="justify-content:center">
+				
+					<div class="text-center mt-1">
+                    <div class="flex justify-center my-1 mx-2 md:mx-0">
                        <form action="/y_predict" method="post">
-                        <select id="countries"name="brand" class="bg-gray-50 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <select id="countries"name="brand" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                           <option selected>Select your car brand</option>
                           {% for r in brand%}
 							<option value="{{r}}">{{r}} </option>
@@ -62,35 +108,12 @@
 						{% endfor %}
                         </select>
 						<span class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">	{{ypred}}  </span>
-					  <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">submit</button>
-                      
+					    <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">submit</button>                      
 					  </form>
                     </div>
-					
+					<a href="/" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Another Submission</a>
                 </div>
-           </div>
-           </div>
-         </section>
-      </div>
-<div class="bg-gray-50">
-        <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
-          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            <span class="block">Looking to sell your car?</span>
-            <span class="block text-orange-600">Enter your car registration no.</span>
-          </h2>
-
-			<input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 uppercase" placeholder="TN72AU1234" required>
-
-          <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-            <div class="inline-flex rounded-md shadow">
-              <button class="inline-flex items-center justify-center rounded-md border border-transparent bg-orange-600 px-5 py-3 text-base font-medium text-white hover:bg-orange-700">Get Car Price</button >
-             </div>
-            <div class="ml-3 inline-flex rounded-md shadow">
-			<form action="{{ url_for('auth.signup') }}">
-					<button class="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-orange-600 hover:bg-orange-50">Get Started</button>
-			</form>
-            </div>
-          </div>
-        </div>
-      </div>
+				
+				</div>
+</div>
 {% endblock %}
