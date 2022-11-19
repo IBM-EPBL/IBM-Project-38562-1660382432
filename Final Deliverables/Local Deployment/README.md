@@ -1,11 +1,11 @@
 # By Next, run the following command:
 
 # REQUIREMENT:
-DOWNLOAD Lib.rar from the Drive:
-Drop in this path:https://drive.google.com/drive/folders/1eYGcbeCU9b6DQG4PziahkBe4q00UBFFe?sort=13&direction=a
+DOWNLOAD Lib.rar from the Drive link:https://drive.google.com/drive/folders/1eYGcbeCU9b6DQG4PziahkBe4q00UBFFe?sort=13&direction=a
+Drop in this path:
 ...........IBM-Project-38562-1660382432\Final Deliverables\Local Deployment\auth
-DOWNLOAD resale_model.sav from the Drive:
-Drop in this path:https://drive.google.com/drive/folders/1eYGcbeCU9b6DQG4PziahkBe4q00UBFFe?sort=13&direction=a
+DOWNLOAD resale_model.sav from the Drive Link:https://drive.google.com/drive/folders/1eYGcbeCU9b6DQG4PziahkBe4q00UBFFe?sort=13&direction=a
+Drop in this path:
 ...........IBM-Project-38562-1660382432\Final Deliverables\Local Deployment
 
 
